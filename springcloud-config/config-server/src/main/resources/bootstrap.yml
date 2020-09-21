@@ -1,0 +1,18 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      name: config-repo
+      server:
+        git:
+          uri: https://github.com/DikU-16/config-repo.git
+          username: yourusername
+          password: yourpassword
+          searchPaths: config-repo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka

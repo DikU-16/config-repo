@@ -1,0 +1,17 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: prod
+#      uri: http://localhost:7001/   # 如果不通过eureka拉取就用uri
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
